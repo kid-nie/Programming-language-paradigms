@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout<<"6."<<endl;
+    cout<<"Write a recursive function int sumup(int x) that works as described above,but uses a for-loop."<<endl;
+
+    int num;
+    int sum=0;
+    cout<<"enter a number: ";
+    cin>>num;
+    for (int i = 0; i <(num); i++) {
+        sum+=i;
+    }
+    cout<< sum<< endl;
+}
