@@ -1,0 +1,15 @@
+//Explore block-level scope and variable shadowing: Declare an integer variable 
+//inside main(). Inside an if block, declare another variable with the same name 
+//as the outer variable but a different value. Print the variable inside and outside 
+//the block.Observe how the inner variable "shadows" the outer variable
+#include <iostream>
+using namespace std;
+int main() {
+    int num = 10;
+    if (true) {
+        int num= 20;
+        cout << "1. Inside the block, num = "<<num << endl;
+}
+cout<<"2. outside the block, num = " <<num <<endl;
+return 0;
+}
