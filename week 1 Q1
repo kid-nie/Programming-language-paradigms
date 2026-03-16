@@ -1,0 +1,12 @@
+## question 1:
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout<<"1."<<endl;
+    cout<<"welcome to c++\ncoding is fun\nthis is coding class"<<endl;
+
+    return 0;
+}
+
+
