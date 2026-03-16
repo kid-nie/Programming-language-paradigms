@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    cout<<"7. Create an interest calculator that will prompt the user to input a starting balance (£1000) and an interest rate (5%) on the starting balance. Work out the balances after the first, second and third year."<<endl;
+    
+    float num;
+    cout<<"enter your balance:";
+    cin >>num;
+    
+    float in;
+    cout<<"type your interest (w/o %):";
+    cin >>in;
+    float perc= in/100;
+    
+    double x = pow(perc, 2); 
+    double y = pow(perc, 3); 
+    
+    float first=num*perc;
+    float sec=num*(x);
+    float third=num*(y);
+    cout<<"first year:"<<first << "\n";
+    cout<<"second year:"<<sec << "\n";
+    cout<<"third year:"<<third << "\n";
+}
