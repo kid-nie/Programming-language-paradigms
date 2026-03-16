@@ -1,0 +1,15 @@
+
+#include <iostream>
+using namespace std;
+
+int num=15; //global variable
+
+void numfunction(){
+    int num=5; //local variable
+    cout<<"1. value of num inside the func: "<<num<<endl;
+}
+
+int main() {
+    numfunction();
+    cout<<"2. value of num inside the main: "<<num<<endl;
+}
