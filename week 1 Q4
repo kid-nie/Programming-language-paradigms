@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout<<"4."<<endl;
+    float num=100;
+    
+    float num2=150;
+    
+    float sum=num+num2;
+    cout<<"sum of the two numbers is "<<sum;
+}
