@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a number");
+        float num = in.nextFloat();
+        
+        if (num>0){
+            System.out.println("the entered number is postive"); 
+        } else if (num<0){
+            System.out.println("the entered number is negative"); 
+        }else{
+            System.out.println("the entered number is neither postive nor negative"); 
+        }
+    
+    }
+}
