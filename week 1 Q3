@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout<<"3."<<endl;
+    float num;
+    cout<<"type your number:";
+    cin >>num;
+    
+    float num2;
+    cout<<"type your number:";
+    cin >>num2;
+    
+    float sum=num+num2;
+    cout<<"sum of the two numbers is "<<sum;
+
+    return 0;
+}
