@@ -1,0 +1,18 @@
+1. Give three examples, in different contexts, of abstract machines. For each
+example, can you identify primitives and what can take on the role of interpreter?
+
+ANS: 
+
+2. Describe the differences between the interpretative and compiled
+implementations of a programming language, emphasising the advantages and
+disadvantages.
+
+ANS: 
+
+3. Explain in simple terms the relationship between variables being in scope, code
+blocks, and the stack.
+
+ANS: 
+## scope 
+variables mentioned in global scope is through out the code and will not change value. 
+variables mentioned in local scope is only used or valid with a function, loop or code block. The value of the variable can be different outside this code block.
