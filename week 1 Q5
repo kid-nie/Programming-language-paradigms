@@ -4,17 +4,17 @@ using namespace std;
 int main() {
     cout<<"5. Write a program to declare two integers and demonstrate the use of addition,subtraction, multiplication, division and modulo operators"<<endl;
     
-    float num;
+    int num;
     cout<<"type your number:";
     cin >>num;
     
-    float num2;
+    int num2;
     cout<<"type your number:";
     cin >>num2;
     
-    float sum=num+num2;
-    float sub=num-num2;
-    float mul=num*num2;
+    int sum=num+num2;
+    int sub=num-num2;
+    int mul=num*num2;
     float dive=num/num2;
     
     cout<<"sum of the two numbers is "<<sum <<"\n";
