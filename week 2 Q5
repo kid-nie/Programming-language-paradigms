@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int sumup_rec(int x){
+
+    if (x < 0) {
+        return 0;  
+    } else {
+        return x + sumup_rec(x - 1); 
+    }
+}
+
+int main() {
+    cout<<"5. Write a recursive function int sumup_rec(int x) that sums up all integers between a given positive integer and 0. E.g., sumup_rec(5) should return 15 (5 +4 + 3 + 2 + 1 = 15)"<<endl;
+
+    int num;
+    cout<<"enter a number: ";
+    cin>>num;
+    cout<< sumup_rec(num) << endl;
+
+}
