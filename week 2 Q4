@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int faculty(int n){
+
+    if (n <= 0) {
+        return 1;  
+    } else {
+        return n * faculty(n - 1); 
+    }
+}
+
+int main() {
+    cout<<"4. Write a function int faculty(int x) that calculates the faculty in a non-recursive way (e.g., by using a for-loop)."<<endl;
+
+    int num;
+    int mul=1;
+    cout<<"enter a number: ";
+    cin>>num;
+    cout<< "factorial function answer= "<<faculty(num) << endl;
+    
+    for (int i=1;i<=num;i++){
+        mul=mul*i ;
+    }
+    cout<<"for loop answer= "<<mul<<endl;
+
+}
