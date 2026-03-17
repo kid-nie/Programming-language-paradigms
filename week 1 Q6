@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout<<"6. Write a program to declare two decimals and demonstrate the use of addition,subtraction, multiplication, division and modulo operators"<<endl;
+    
+    float num;
+    cout<<"type your number:";
+    cin >>num;
+    
+    float num2;
+    cout<<"type your number:";
+    cin >>num2;
+    
+    float sum=num+num2;
+    float sub=num-num2;
+    float mul=num*num2;
+    float dive=num/num2;
+    
+    cout<<"sum of the two numbers is "<<sum <<"\n";
+    cout<<"subtraction of the two numbers is "<<sub<<"\n";
+    cout<<"product of the two numbers is "<<mul<<"\n";
+    cout<<"quotient of the two numbers is "<<dive<<"\n";
+}
