@@ -1,0 +1,27 @@
+//8. Swap two numbers using pointers: Write a program that swaps the values of two integers using pointers. Create a function void swap(int* a, int* b) that
+//takes two integer pointers as arguments and swaps their values.In the main() function, declare two integers and read their values from the user.
+//Call the swap() function using the integer’s addresses. Print the swapped values.
+
+#include <iostream>
+using namespace std;
+
+int num1=10;
+int num2=20;
+int* px= &num1;
+int* py= &num2;
+
+void swap(int* a, int* b){
+    
+    int c=*a;
+    *a=*b;
+    *b=c;
+    
+    cout<<"3. swapped values using pointers:\nvalue of num1 is  "<<*a<<" and pointer is in "<<a<<"\nvalue of num2 is  "<<*b<<" and pointer is in "<<b<<endl;
+}
+
+
+int main() {
+    cout<<"1.Before function num1 value is "<<num1<<" and pointer is "<<px<<endl;
+    cout<<"2.Before function num2 value is "<<num2<<" and pointer is "<<py<<endl;
+    swap(px,py);
+}
