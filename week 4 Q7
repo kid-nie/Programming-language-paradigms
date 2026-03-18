@@ -1,0 +1,26 @@
+//7. Write a program that queries the user to enter a positive integer, then creates a
+//std:list storing all integers from 1 to the user-generated number.
+
+#include <list>
+#include<iostream>
+using namespace std;
+
+int main() {
+    list<int> counting;
+    int num;
+    cout << "Enter a positive number  : ";
+    cin >> num;
+        
+    if (num<0){
+        cout<<"error, enter positive number"<<endl;
+    }else{
+        for (int i=1;i<num+1;i++){
+            counting.push_back(i);
+        }
+    }
+    for (int i : counting)
+        cout << i << endl;
+    return 0;
+    
+    }
+    
