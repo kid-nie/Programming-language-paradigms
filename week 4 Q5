@@ -1,0 +1,31 @@
+//5. Repeat exercise 4, but write a new function that takes as parameter a pointer to
+//an integer and values the value stored at the pointer inside the function. Print the
+//value in main() before calling the function, then inside the function, and then
+//again in main() after calling the function, and observe the behaviour
+
+
+#include <iostream>
+using namespace std;
+
+
+void pointerval_function(int* x){
+    cout<<"2.function that displayed the value in x using pr: "<<*x<<" and the pointer value is "<<x<<endl;
+}
+
+void changeval_function(int* a){
+    *a=16;
+    cout<<"3.function that changed the value inside function using int* pr:" <<*a<<" and the address pointer to 16 is: "<<a<<endl;
+}
+
+int main() {
+    int x=2006;
+    int* pr= &x;
+    
+    cout<<"1.displaying value in x:"<< x<<endl;
+    
+    pointerval_function(pr);
+    
+    changeval_function(pr);
+    
+    cout<<"4.final value of x: "<<x<<endl;
+}
