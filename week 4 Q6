@@ -1,0 +1,20 @@
+//6. Print out memory address and value of a pointer: Write a C/C++ function void
+//printVM(int a) (note argument type, which is different from the task above)
+//that takes as argument an integer and prints to the console the value stored at
+//that pointer as well as the memory address. Write a suitable main() function to demonstrate your code.
+
+
+#include <iostream>
+using namespace std;
+
+int x=16;
+
+void vm(int a){
+    int* pr= &a;
+    cout<<"1.function that prints the value: "<<a<<" and the pointer value is "<<pr<<endl;
+}
+
+
+int main() {
+    vm(x);
+}
