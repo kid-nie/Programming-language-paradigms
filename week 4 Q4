@@ -1,19 +1,24 @@
-//4. Write a program that asks the user for a number n, uses malloc() to allocate an 
-//array of n integers, takes n integer inputs from the user and stores them in the 
-//array, prints the entered numbers, then frees the allocated memory.
-// Write a program that allocates memory for a string(character array) using 
-//malloc(), reads a string from the user, prints the entered string and frees the 
-//allocated memory
-#include<iostream> 
+//4. Write a program that asks the user for a number n, uses malloc() to allocate an
+//array of n integers, takes n integer inputs from the user and stores them in the
+//array, prints the entered numbers, then frees the allocated memory
+
+#include <cstdlib>
+#include<iostream>
 using namespace std;
+
 int main() {
-    char str[] = "Hello World";
-    char* ptr = str;
-    cout  <<  "The letters in the string are: "  <<  endl;
-    while (*ptr!= '\0') {
-    cout << "elements: " <<  * ptr  << endl; 
-    ptr++;
-    
-}
-return 0;
+    int n;
+    cout << "Enter array length  : ";
+    cin >> n;
+    int *ptr;
+    ptr= (int*)malloc(sizeof(int)*n);
+    for(int i=0;i<n;i++){
+        cout << "Enter array elements  : ";  
+        cin >> *(ptr+i);
+        
+    }
+    for (int i=0;i<n;i++){
+        cout<<*(ptr+i)<<endl;
+    }
+    free(ptr);
 }
