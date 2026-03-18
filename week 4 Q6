@@ -1,0 +1,41 @@
+
+//6. Write a C program that defines a struct for a student with fields name (string)
+//and age (integer), uses malloc() to allocate memory for one student, takes user input for name and age, prints the student's information, and frees the allocated memory.
+
+#include <cstdlib>
+#include<iostream>
+using namespace std;
+
+char *p1;
+int *p2;
+int age;
+
+int main() {
+    string name;
+    cout << "Enter name  : ";
+    cin >> name;
+    cout << "Enter age  : ";
+    cin >> age;
+        
+    int len=name.size();
+    
+    p1= (char*)malloc(sizeof(char)*len);
+        
+    p2= (int*)malloc(sizeof(int));
+    *p2=age;
+        
+    for (int i=0;i<len;i++){
+        *(p1+i)= name[i];
+    }
+    cout<<"\nName:"<<" ";
+    for (int i=0;i<len;i++){
+        cout<<*(p1+i)<<"";
+    }
+    cout<<"\nAGE:"<<*p2<<endl;
+    
+        
+    free(p1);
+    free(p2);
+    
+    }
+    
