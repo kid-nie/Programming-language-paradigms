@@ -1,0 +1,27 @@
+// Print out memory address and value of a pointer: Write a C/C++ function void
+//printVMPointer(int* a) that takes as argument a pointer to an integer and
+//prints to the console the value stored at that pointer as well as the memory
+//address. Write a suitable main() function to demonstrate your code.
+
+
+#include <iostream>
+using namespace std;
+
+void Pointer_function(int* a){
+    cout<<"2. output from function: "<<*a<<endl;
+}
+int main() {
+    int x=90; //value 90 is stored in x
+    int* pr= &x; //memory pointer to x 
+    cout<<"1. output from inside main code: "<<endl;
+    cout<<x<<endl;
+    cout<<pr<<endl; //address pointer
+    cout<<*pr<<endl; //* pr takes the value stored in address pr
+    
+    string line(40, '-');//"-"*40 doesnt work so use string variable( n, "x") so x*n
+    cout << line << endl;
+    
+    Pointer_function(pr);
+
+    return 0;
+}
