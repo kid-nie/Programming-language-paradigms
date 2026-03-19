@@ -1,0 +1,14 @@
+11. Write a program that implements a Hangman-style word guessing game. The
+game should allow a player to guess letters of a hidden word, track incorrect
+guesses, and display progress. The program should store a list of words in a
+prepopulated array, list, or similar. A random word should be selected as the
+target word for the game.
+During the game, display the word with unguessed letters replaced by
+underscores (_). Prompt the player to guess a letter. Check if the guessed letter is
+in the word: If correct, reveal the letter in the word. If incorrect, track the wrong
+guess and reduce remaining attempts. Display the current state of the word and
+the number of attempts left.
+Maintain a list of previously guessed letters to prevent duplicate inputs. The
+player wins if they guess all letters in the word. The player loses if they exceed the
+maximum number of incorrect guesses (e.g., 6).
+At the end, display the correct word and a win/loss message.
