@@ -12,3 +12,56 @@ Maintain a list of previously guessed letters to prevent duplicate inputs. The
 player wins if they guess all letters in the word. The player loses if they exceed the
 maximum number of incorrect guesses (e.g., 6).
 At the end, display the correct word and a win/loss message.
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    char char_guess;
+    string guess="";
+    int l=0;
+    string arr[5]={"hi","bye","name","flood","pooping"};
+    int rn = rand() % 5;
+    cout << rn<<endl;
+    string word= arr[rn];
+    std::string name = word;
+    int rounds= 6;
+    int length= word.length();
+    cout<<word<<endl;
+    cout<<"enter your guess: ";
+    cin>>char_guess;
+    int p=6;
+    while ((p<rounds)or (l!=length)){
+        if (name.find(char_guess) != std::string::npos) {
+            std::cout << "The character "<<char_guess<<" is in the string."<< std::endl;
+        l++;
+        if (name.find(char_guess) != std::string::npos) {
+        std::cout << "The character "<<char_guess<<" is in the string twice"<< std::endl;
+        l++;
+    }else{
+        std::cout << "The character "<<char_guess<<" is in the string." << std::endl;
+        l++;
+    }
+        
+    } else {
+        std::cout << "The character "<<char_guess<<" is not in the string." << std::endl;
+        p--;
+    }
+    cout<<"no.of chances left: "<<p<<endl;
+    cout<<l<<endl;
+    if (l==length){
+         break; 
+    }
+    cout<<"enter your guess: ";
+    cin>>char_guess;
+    }
+    
+    if ((p==rounds)and (l==length)){
+        cout<<"failed! the word was "<<word<<endl;
+    }else{
+        cout<<"YOU WON! the word was "<<word<<endl;
+    }
+    
+}
