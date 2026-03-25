@@ -1,14 +1,21 @@
-//7. Write a function int* addPointer(int* a, int* b) to add two integers using pointers. Write a suitable main() function that calls addPointer() and outputs the results.
-
 #include <iostream>
 using namespace std;
 
-int x=16;
 
-void vm(int a){
-    int* pr= &a;
-    cout<<"1.function that prints the value: "<<a<<" and the pointer value is "<<pr<<endl;
+void addpointer(int* a,int* b ){
+    int sum= *a+*b;
+    cout<<"function that adds the value of pointers : "<<sum<<endl;
 }
+
+
+int main() {
+    int a=40;
+    int b=10;
+    int* px= &a;
+    int* py= &b;
+    addpointer(px,py);
+}
+
 
 
 int main() {
