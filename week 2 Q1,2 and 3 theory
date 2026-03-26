@@ -1,18 +1,38 @@
 1. Give three examples, in different contexts, of abstract machines. For each
 example, can you identify primitives and what can take on the role of interpreter?
 
-ANS: 
+ANS: Examples of Abstract Machines:
+1. Turing Machine :
+Primitives are move, read and write.
+Turing machine can take on roles of interpreting for UTM.
+2. Finite state machine:
+Primitives are the M={ States , Inputs,  intial sate, transition }
+3. JVM:
+Primitives are boolean, char, float, double , byte, integer, long
 
 2. Describe the differences between the interpretative and compiled
 implementations of a programming language, emphasising the advantages and
 disadvantages.
+ANS:
+	Interpretative languages	Compiled languages
+Definition 	Reads code line by line 	The entire source code is converted into machine code then executed as a separate file.
+Examples	Python, java	C, c++
+Advantages	Platform independence and easy fast coding with debugging	Easy to detect errors and execution of code is faster
+Disadvantages	Must have correct interpreter to run code and slower execution 	Platform dependent
 
-ANS: 
 
 3. Explain in simple terms the relationship between variables being in scope, code
 blocks, and the stack.
 
-ANS: 
-## scope 
-variables mentioned in global scope is through out the code and will not change value. 
-variables mentioned in local scope is only used or valid with a function, loop or code block. The value of the variable can be different outside this code block.
+ANS:  
+Code blocks:
+1. They are written in {} brackets only.
+2. They execute the code written within.
+3. These {} means that they are local scope.
+Variables:
+1. They store values.
+2. If a variable is mentioned inside a code block {} ,then it is a local varirable and its new value isn’t for the entire line of code.
+3. Whereas, if the variable is given a value out side the code block and inside the main {}, then its value is consistent through the code except when value is changed inside a code block.
+Stack:
+1. it is a linear data structure that follows the rule FILO or LIFO. (first in ,last out)
+2. examples are piles of books or plates.
