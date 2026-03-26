@@ -4,15 +4,21 @@
 using namespace std;
 
 int main() {
+    int num;
+    cout<<"Enter no.of students: ";
+    cin >> num;
     map<int, string> people = {};
     string name;
     int id;
+    for (int i=0;i<num;i++){
     cout<<"Enter name: ";
     cin >> name;
     cout<<"Enter id: ";
     cin >> id;
     
     people[id] = name;
-    cout << id<<" ID belongs to " << people[id] << "\n";
-    return 0;
+    }
+    cout << "ID\t\t\t NAME" << endl;
+    for (auto i : people)
+        cout << i.first << " \t\t\t " << i.second << endl;
 }
