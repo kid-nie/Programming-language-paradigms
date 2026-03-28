@@ -1,51 +1,40 @@
-//1.Create an enum to represent the days of the week and 
-//write a program that prints a message for each day.
-//define an enum called Day with values MONDAY, TUESDAY, …, SATURDAY and SUNDAY. 
-//Write a function printDayMessage(Day d) that prints "Time to work!" for weekdays, and
-//"Enjoy the weekend!" for SATURDAY, and "Relax, it's Sunday!" for SUNDAY. In main(), 
-//prompt the user to enter a number (1-7) and display the corresponding message.
-
-
-
 #include <iostream>
 #include <string>
 using namespace std;
 
-void printDayMessage(int x){
-    switch (x)
-	{
-	case 6:
-        cout<<"sat Enjoy the weekend!"<<endl;
-		break;
-	case 7:
-        cout<<"sun Relax, it's Sunday!"<<endl;
-		break;
-	default:
-        cout<<": Time to work!"<<endl;
-        exit(0);
-	}
+enum Day {
+        MONDAY=1, 
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY,
+        SUNDAY,
+        
+    };
+
+void printDayMessage(Day d) {
+    if (d>=MONDAY&&d<=FRIDAY){
+        cout<<"Time to work!"<<endl;
+    }
+    else if(d==SATURDAY){
+        cout<<"Enjoy the weekend!"<<endl;
+        
+    }else{
+        cout<<"Relax, it's Sunday!"<<endl;}
+    
 }
 
 int main() {
     int choice;
     
-    enum Day {
-        MONDAY=1, 
-        TUESDAY=2,
-        WEDNESDAY=3,
-        THURSDAY=4,
-        FRIDAY=5,
-        SATURDAY=6,
-        SUNDAY=7,
-        
-    };
-    
     cout<<"Pick a number from 1-7: ";
     cin>>choice;
     
+   if (choice>=1&&choice<=7){
+   printDayMessage((Day)choice);
+   }else
+   {cout<<"Invalid input!"<<endl;}
     
-    Day today;
-    today = MONDAY;
-    cout<<today<<endl;
-    //printDayMessage(today);
+
 }
