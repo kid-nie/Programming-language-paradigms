@@ -1,0 +1,41 @@
+//Learn to use constructors and destructors in a class. Create a class called Car.
+//Add private data members brand (string) and year (int). Implement a
+//constructor that initializes the brand and year, and a destructor that prints: "Car
+//object destroyed" when an object is deleted. Further implement a method
+//displayInfo() that prints car details. In main(), create two Car objects using
+//the constructor and display their details.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class  Car{       // The class
+  private:             // Access specifier
+    int year;        // Attribute (int variable)
+    string brand;  // Attribute (string variable)
+    public:              // Access specifier
+     Car(int y, string b) {  // Method/function 
+      year=y;
+      brand=b;
+    }
+    
+    void displayinfo() {  // Method/function 
+      cout<<"year: "<<year<<"brand: "<<brand<<endl;
+    }
+    ~ Car() { 
+      cout << "Car object destroyed "<<endl;
+    }
+    
+};
+
+int main() {
+    int x;
+    string y;
+    x=3007;
+    y="ford";
+    Car car1(9304,"aston martin");
+    Car car2(x,y);
+    car1.displayinfo();
+    car2.displayinfo();
+
+}
