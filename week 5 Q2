@@ -1,0 +1,40 @@
+//2. Create a simple class called Rectangle with private data members and public methods. Add two private data members: width and height (both float).
+//Implement the following public methods:
+//a. setDimensions(float w, float h): Sets the width and height.
+//b. getArea(): Returns the area of the rectangle.
+//c. getPerimeter(): Returns the perimeter of the rectangle.
+//In main(), create a Rectangle object, set its dimensions, and display the area
+//and perimeter.
+#include <iostream>
+using namespace std;
+
+class  Rectangle{       // The class
+  private:             // Access specifier
+    float width;        // Attribute (int variable)
+    float height;  // Attribute (string variable)
+    public:              // Access specifier
+    void setDimensions(float w, float h) {  // Method/function 
+      width=w;
+      height=h;
+    }
+    void getArea() {  
+        float a=width*height;
+      cout << "area of rectangle is "<<a<<endl;
+    }
+    void getPerimeter() {  // Method/function 
+      float p=2*(width+height);
+      cout << "perimeter of rectangle is "<<p<<endl;
+    }
+};
+
+int main() {
+    float x,y;
+    x=10;
+    y=9.34;
+    Rectangle myObj;     // Create an object of MyClass
+    myObj.setDimensions(x,y);
+    myObj.getArea();
+    myObj.getPerimeter();
+    
+    
+}
