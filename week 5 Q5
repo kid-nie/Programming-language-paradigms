@@ -1,0 +1,38 @@
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Animal{     
+    public:              // Access specifier
+     void speak() {  // Method/function 
+      cout<<"Animal sound"<<endl;
+    }
+    
+    
+};
+// Derived class
+    class Dog:public Animal {
+        public: 
+        void bark(){
+            cout<<" WOOF WOOF!"<<endl;
+            
+        }
+    };
+    class Cat:public Animal {
+        public: 
+        void meow(){
+            cout<<" MEOW MEOW!"<<endl;
+            
+        }
+    };
+int main() {
+    Dog dog;
+    dog.bark();
+    dog.speak();
+    Cat cat;
+    cat.meow();
+    cat.speak();
+
+}
