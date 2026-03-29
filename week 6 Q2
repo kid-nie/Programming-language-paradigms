@@ -1,0 +1,104 @@
+#include <iostream>
+#include<string>
+#include <algorithm>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+class library{
+    public:
+    vector<string> books ={"shutter island","before the coffee gets cold","sapiens"};
+    
+    void display_books(){
+        cout<<"All our collection of books:"<<endl;
+        int k=1;
+        for (auto i:books){
+            cout<<k<<". "<<i<<endl;
+            k++;
+        }//end of for loop
+        string line(60,'-');
+        cout <<line<< endl;
+    }//closing of display
+    
+    
+    void insert_book(){
+        int b;
+        string a;
+        cout<<"how many books you want to enter? ";
+        cin>>b;
+        string line(6,'-');
+        cout <<line<< endl;
+        for (int i=0;i<b;i++){
+            cout<<"name of book you want to enter? ";
+            cin>>a;
+            auto search = std::find(books.begin(), books.end(), a);
+
+    if (search != books.end()) {
+        cout <<'"'<< a <<'"'<< " is already there in our library"<< endl;
+    } else {
+        books.push_back(a);
+            cout<<"added book "<<'"'<< a <<'"'<<endl;
+    }
+        }//end of for
+        display_books();
+ 
+    }//end of func
+    
+    void remove_book(int choice){
+        string a=books[choice-1];
+        books.erase(books.begin() + choice-1);
+        cout<<'"'<< a <<'"'<<" removed book"<<endl;
+    }//end of func
+    
+    void search_book(string bk){
+        
+    auto search = std::find(books.begin(), books.end(), bk);
+
+    if (search != books.end()) {
+        cout <<bk<< " is there in our library"<< endl;
+    } else {
+        cout << bk << " not found" << endl;
+    }
+    }//end of func
+};//end of lib
+
+class Book:public library{
+    public:
+    string author,ISBN,availability,title;
+    unordered_map<std::string, vector<string>> collection;
+    void borrow_book(string a){
+        auto search = std::find(books.begin(), books.end(), a);
+        string line(6,'-');
+        cout <<line<< endl;
+    if (search != books.end()) {
+        availability="unavailable";
+        collection[a]={author,ISBN,availability};
+        for (const auto& [key, values] : collection) {
+            cout <<  key << "'s availability: " ;
+        for (const auto& value : values) {
+            cout << value <<endl;
+        }
+    }
+        cout<<'"'<< a <<'"'<<" added to your cart"<<endl;
+    } else {
+        cout <<'"'<< a <<'"'<< " not found" << endl;
+    }
+    
+    }
+};
+
+
+int main() {
+    library lib;
+    lib.display_books();
+    lib.search_book("sapiens");
+    lib.search_book("divergent");
+    lib.insert_book();
+    lib.remove_book(4);
+    
+    Book book;
+    book.borrow_book("sapiens");
+    book.borrow_book("abc");
+    
+    
+}
