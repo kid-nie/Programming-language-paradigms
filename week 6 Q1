@@ -27,31 +27,53 @@ class fraction{
     void addingfrac(){
         int a,b,sum,den;
         cout<<"adding: "<<numerator1<<"/"<<denominator1<<"+"<<numerator2<<"/"<<denominator2<<endl;
+        if(numerator1==0){
+            sum=denominator2+numerator2;
+            simplify(sum,denominator2);
+        }else if(numerator2==0){
+            sum=numerator1+denominator1;
+            simplify(sum,denominator1);
+        }else{
         a=numerator1*denominator2;
         b=numerator2*denominator1;
         sum=a+b;
         den=denominator1*denominator2;
         simplify(sum,den);
+        }
         string line(40,'-');
         cout<<line<<endl;
     }
     void subfrac(){
         int a,b,sub,den;
         cout<<"subtracting: "<<numerator1<<"/"<<denominator1<<"-"<<numerator2<<"/"<<denominator2<<endl;
+        if(numerator1==0){
+            sub=denominator2-numerator2;
+            simplify(sub,denominator2);
+        }else if(numerator2==0){
+            sub=numerator1-denominator1;
+            simplify(sub,denominator1);
+        }else{
         a=numerator1*denominator2;
         b=numerator2*denominator1;
         sub=a-b;
         den=denominator1*denominator2;
         simplify(sub,den);
+        }
         string line(40,'-');
         cout<<line<<endl;
     }
     void mulfrac(){
         int a,b,mul,den;
         cout<<"multiplying: "<<numerator1<<"/"<<denominator1<<"*"<<numerator2<<"/"<<denominator2<<endl;
-        mul=numerator1*numerator2;
+        if(numerator1==0 ||numerator2==0){
+            cout<<0<<endl;}
+            else{
+        a=numerator1*denominator2;
+        b=numerator2*denominator1;
+        mul=a-b;
         den=denominator1*denominator2;
         simplify(mul,den);
+        }
         string line(40,'-');
         cout<<line<<endl;
     }
@@ -79,9 +101,8 @@ class fraction{
 return result;
     }
     void simplify(int a,int b){
-        int d,c,new1,new2;
+        int d,new1,new2;
         d= gcd(a,b);
-        c=d;
         new1=a/d;
         new2=b/d;
         cout<<new1<<"/"<<new2<<endl;
