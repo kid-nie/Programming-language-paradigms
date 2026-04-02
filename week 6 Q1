@@ -1,0 +1,107 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class fraction{
+   public:
+    int numerator1,denominator1,numerator2,denominator2;
+    
+    void setNumerator1andDenominator1(int a, int b){
+        if (b==0){
+            cout<<"error! cant have 0 as denominator"<<endl;
+        }else if(a==0){
+            numerator1=0;
+            denominator1=0;
+            cout<<"added values to 1st fraction"<<endl;
+        }else{
+        numerator1=a;
+        denominator1=b;
+        cout<<"added values to 1st fraction"<<endl;
+    }}
+    void setNumerator2andDenominator2(int a, int b){
+        numerator2=a;
+        denominator2=b;
+        cout<<"added values to 2nd fraction"<<endl;
+    }
+
+    void addingfrac(){
+        int a,b,sum,den;
+        cout<<"adding: "<<numerator1<<"/"<<denominator1<<"+"<<numerator2<<"/"<<denominator2<<endl;
+        a=numerator1*denominator2;
+        b=numerator2*denominator1;
+        sum=a+b;
+        den=denominator1*denominator2;
+        simplify(sum,den);
+        string line(40,'-');
+        cout<<line<<endl;
+    }
+    void subfrac(){
+        int a,b,sub,den;
+        cout<<"subtracting: "<<numerator1<<"/"<<denominator1<<"-"<<numerator2<<"/"<<denominator2<<endl;
+        a=numerator1*denominator2;
+        b=numerator2*denominator1;
+        sub=a-b;
+        den=denominator1*denominator2;
+        simplify(sub,den);
+        string line(40,'-');
+        cout<<line<<endl;
+    }
+    void mulfrac(){
+        int a,b,mul,den;
+        cout<<"multiplying: "<<numerator1<<"/"<<denominator1<<"*"<<numerator2<<"/"<<denominator2<<endl;
+        mul=numerator1*numerator2;
+        den=denominator1*denominator2;
+        simplify(mul,den);
+        string line(40,'-');
+        cout<<line<<endl;
+    }
+    void divfrac(){
+        int divide,den;
+        cout<<"dividing: "<<numerator1<<"/"<<denominator1<<" / "<<numerator2<<"/"<<denominator2<<endl;
+        divide=numerator1*denominator2;
+        den=denominator1*numerator2;
+        simplify(divide,den);
+        string line(40,'-');
+        cout<<line<<endl;
+    }
+    
+    int gcd(int a,int b){
+        
+        int result = min(a, b);
+        while (result > 0) {
+            if (a % result == 0 && b % result == 0) {
+                break;
+        }
+        result--;
+    
+
+        }
+return result;
+    }
+    void simplify(int a,int b){
+        int d,c,new1,new2;
+        d= gcd(a,b);
+        c=d;
+        new1=a/d;
+        new2=b/d;
+        cout<<new1<<"/"<<new2<<endl;
+        
+    }
+    
+};
+int main() {
+    fraction f;
+    
+    f.setNumerator1andDenominator1(0,3);
+    f.setNumerator2andDenominator2(10,3);
+    
+    f.addingfrac();
+    f.mulfrac();
+    f.subfrac();
+    f.divfrac();
+    
+    cout<<"testing:"<<endl;
+    f.simplify(f.numerator1,f.denominator1);
+    f.simplify(2,4);
+    
+}
