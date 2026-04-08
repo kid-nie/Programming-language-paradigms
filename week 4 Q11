@@ -1,29 +1,67 @@
 #include <iostream>
+#include <vector>
 #include <string>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+
 using namespace std;
 
 int main() {
-    char char_guess;
-    string guess="";
-    int l=0;
-    char arr[]="aran";
-    int len=sizeof(arr);
-    char guessed[len];
-    int chances=0;
-    while (chances < 6){
-        cout<<"\n"<<chances<<"enter your guess: ";
-        cin>>char_guess;
-        if (word.find(char_guess) == std::string::npos) {
-                chances++;
-    }
-        for (int i=0;i<len;i++){
-        if(arr[i]==char_guess){
-            guessed[i]=arr[i];
-            
-        }else{
-            
+    vector<string> words = {"tea", "phone", "class", "water", "coffee"};
+    
+    srand(time(0));
+    string word = words[rand() % words.size()];
+    
+    string guessed(word.length(), '_');
+    vector<char> wrongGuesses;
+    
+    int attempts = 6;
+    char guess;
+
+    cout << "Welcome to Hangman!\n";
+
+    while (attempts > 0 && guessed != word) {
+        cout << "\nWord: ";
+        for (char c : guessed) cout << c << " ";
+        
+        cout << "\nWrong guesses: ";
+        for (char c : wrongGuesses) cout << c << " ";
+        
+        cout << "\nAttempts left: " << attempts;
+        cout << "\nEnter a letter: ";
+        cin >> guess;
+
+        // check if already guessed
+        if (find(guessed.begin(), guessed.end(), guess) != guessed.end() ||
+            find(wrongGuesses.begin(), wrongGuesses.end(), guess) != wrongGuesses.end()) {
+            cout << "Already guessed!\n";
+            continue;
+        }
+
+        bool correct = false;
+
+        for (int i = 0; i < word.length(); i++) {
+            if (word[i] == guess) {
+                guessed[i] = guess;
+                correct = true;
+            }
+        }
+
+        if (!correct) {
+            wrongGuesses.push_back(guess);
+            attempts--;
+            cout << "wrong guess!\n";
+        } else {
+            cout << "correct!\n";
         }
     }
-}
 
+    if (guessed == word) {
+        cout << "\nYou win! The word was: " << word << endl;
+    } else {
+        cout << "\nYou lost! The word was: " << word << endl;
+    }
+
+    return 0;
 }
