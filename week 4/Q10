@@ -1,0 +1,25 @@
+10. What other containers/ADTs are in the C++ STL? Make a list and implement at
+least one of them
+in c++ stl containers we haven’t done a code for deque and forward_list.
+DEQUE CODE:
+#include <iostream>
+#include <deque>
+using namespace std;
+
+// function prototype
+void display_deque(deque<int>);
+
+int main() {
+ 
+  // uniform initialization 
+  deque<int> deque1 {1, 2, 3, 4, 5};
+
+  cout << "deque1 = ";
+
+  // display elements of deque1
+  for (int num : deque1) {
+    cout << num << ", ";
+  }
+
+  return 0;
+}
