@@ -1,0 +1,16 @@
+1. sum [x^2 | x <- [1..100]]
+
+---
+
+2. 
+--conditional
+safetail xs = if null xs then [] else tail xs
+
+--guarded 
+safetail xs
+        | null xs =[ ]
+        |otherwise = tail xs
+        
+--pattern matching
+safetail [] = []
+safetail (_:xs) = xs
