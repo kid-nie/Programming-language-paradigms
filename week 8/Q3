@@ -1,0 +1,6 @@
+merge :: Ord a => [a] -> [a] -> [a]
+merge [] ys = ys --if first list has no data thn second list is returned
+merge xs [] = xs  --if second list has no data thn first list is returned
+merge (x:xs)(y:ys)
+    |x<=y = x:merge xs (y:ys)
+    |otherwise = y merge(x:xs) ys
