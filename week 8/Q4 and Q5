@@ -1,0 +1,5 @@
+power :: int -> int -> int 
+power _0=1
+power x y = x * power x (y-1)
+
+Q5: question 4 is evaluated 
